@@ -26,3 +26,18 @@ makeFootnote_right <- function(footnoteText=
             gp=gpar(cex= size, col=color))
   popViewport()
 }
+
+
+makeTitle <- function(text=
+                                 format(Sys.time(), "%d %b %Y"),
+                               size= 1, color= "blue")
+{
+  require(grid)
+  pushViewport(viewport())
+  grid.text(label= text ,
+            x = unit(0.5,"npc"),
+            y= unit(0.98,"npc"),
+            just=c("center", "bottom"),
+            gp=gpar(cex= size, col=color))
+  popViewport()
+}
